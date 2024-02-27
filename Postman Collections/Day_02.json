@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "d9f67ee0-feb6-4e36-b8cf-353d0d215c2e",
+		"name": "Day 02: Collections and environments",
+		"description": "## Instructions for Day 2: Collections and environments\n\n1. **Get the challenge:** Fork [the parent collection <code>Day 02: Collections and environments</code>](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-3e883267-c7b7-4696-81a8-13308d3fda7f) to your own public workspace.\n2. **Read the documentation:** In your fork, select the first folder. Expand the context bar on the right to follow the instructions in the collection documentation. Remember, if you find it bothersome to navigate between the documentation while working in a different area of Postman, you can open a new tab to keep your place in the documentation, and then switch between tabs.\n3. **Submit your solution:** Select the second folder `Submit your solution` and follow the instructions in the documentation to validate your solution.\n    \n\n## Concepts covered\n\n- [Adding requests](https://learning.postman.com/docs/sending-requests/intro-to-collections/#adding-requests)\n- [Creating environments](https://learning.postman.com/docs/sending-requests/managing-environments/#creating-environments)\n- [Postman API](https://learning.postman.com/docs/developer/intro-api/)\n    \n\n## Additional resources\n\n- [Postman Environments: How to Control Access to Variables, Workflows, and More](https://blog.postman.com/postman-environments-how-to-control-access-to-variables-workflows-and-more/) blog\n- [Initial vs Current Values for Variables](https://youtu.be/I6vClap0ajU) video\n- [Collections and environments](https://www.tiktok.com/@joycejetson/video/7061999729462250799) tiktok\n    \n\n## Next challenge\n\n- [Add request details](https://www.postman.com/postman/workspace/30-days-of-postman-for-developers/documentation/1559645-969f4824-25ba-4ed6-8926-f71ce4ee079d)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Collections and environments",
+			"item": [
+				{
+					"name": "POST raw text",
+					"id": "a246ca18-d52c-45af-b1df-b8e347c7a0bf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": "{{baseURL}}/post",
+						"description": "It's time to work on your next challenge.\n\n1. **Create a variable**: Notice the same request from the last challenge. Copy the first part of the request URL (the part before `/post`) and replace it with `{{baseURL}}`.The double curly braces is how you get variables in the text fields of Postman. If you hover over the variable, the tool tip says \"Unresolved Variable\" because it hasn't been set yet.\n2. **Create an environment**: [Create a new environment](https://learning.postman.com/docs/sending-requests/managing-environments/#creating-environments) with a key `baseURL`. The value for this new variable should be the part you copied from the request URL in the previous step. You can enter it under both `INITIAL VALUE` and `CURRENT VALUE`. Remember to select the new environment as the active environment so Postman will read in the values properly.If you hover over the variable `{{baseURL}}` in the request URL, you should see Postman reading in the variable value from the actively selected environment. Now that you've stored the base URL in a variable named `baseURL`, you can reference it in your requests using `{{baseURL}}`. If the base URL value is `https://postman-echo.com`, and is listed as part of the request URL using `{{baseURL}}/post`, Postman will send the request to `https://postman-echo.com/post`. Save your changes in the collection and environment.\n3. **Add a request:** Rename the request from `echo` to `POST raw text`. Then, duplicate the request in this folder, and rename the second request `GET with query params`. Update the new request HTTP method to `GET` and update the request URL from `/post` to `/get`. Add two [query parameters](https://learning.postman.com/docs/sending-requests/requests/#sending-parameters). This can be anything you like, for example, `foo` and `bar` or `name` and `ferret`. **Send** to make sure you get a 200 status code.\n    \n\nOnce you complete these steps, move on to the next folder in this collection to submit your solution."
+					},
+					"response": []
+				},
+				{
+					"name": "GET with query params",
+					"id": "3d694397-2658-45eb-9b95-1370887da9b0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/get?maxLength=5&sorted=True",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"get"
+							],
+							"query": [
+								{
+									"key": "maxLength",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "sorted",
+									"value": "True",
+									"type": "text"
+								}
+							]
+						},
+						"description": "It's time to work on your next challenge.\n\n1. **Create a variable**: Notice the same request from the last challenge. Copy the first part of the request URL (the part before `/post`) and replace it with <code>\\{{baseURL\\}}</code>. \n\n  The double curly braces is how you get variables in the text fields of Postman. If you hover over the variable, the tool tip says \"Unresolved Variable\" because it hasn't been set yet.\n1. **Create an environment**: [Create a new environment](https://learning.postman.com/docs/sending-requests/managing-environments/#creating-environments) with a key `baseURL`. The value for this new variable should be the part you copied from the request URL in the previous step. You can enter it under both `INITIAL VALUE` and `CURRENT VALUE`. Remember to select the new environment as the active environment so Postman will read in the values properly.\n\n  If you hover over the variable <code>\\{{baseURL\\}}</code> in the request URL, you should see Postman reading in the variable value from the actively selected environment. Now that you've stored the base URL in a variable named `baseURL`, you can reference it in your requests using <code>\\{{baseURL\\}}</code>. If the base URL value is `https://postman-echo.com`, and is listed as part of the request URL using <code>\\{{baseURL\\}}/post</code>, Postman will send the request to `https://postman-echo.com/post`. Save your changes in the collection and environment.\n1. **Add a request:** Rename the request from `echo` to `POST raw text`. Then, duplicate the request in this folder, and rename the second request `GET with query params`. Update the new request HTTP method to `GET` and update the request URL from `/post` to `/get`. Add two [query parameters](https://learning.postman.com/docs/sending-requests/requests/#sending-parameters). This can be anything you like, for example, `foo` and `bar` or `name` and `ferret`. **Send** to make sure you get a 200 status code.\n\nOnce you complete these steps, move on to the next folder in this collection to submit your solution."
+					},
+					"response": []
+				}
+			],
+			"id": "d2d7448c-4bc4-4647-a145-5a80c348ce0e",
+			"description": "Follow the instructions in the request documentation."
+		},
+		{
+			"name": "Submit your solution",
+			"item": [
+				{
+					"name": "submit",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dcb3b02a-cc82-4fcf-98c7-096ea53ee8f4",
+								"exec": [
+									"let pass = 0;",
+									"",
+									"let totalToPass = 5;",
+									"",
+									"let collection = pm.response.json().collection;",
+									"",
+									"pm.test('If you have any failures, review the failed test results or ask for support in the community forum. Remember to save your changes if you update the collection. When all of your tests pass, you are done with today\\'s challenge.', () => {",
+									"    pm.expect(true);",
+									"    pass += 1;",
+									"})",
+									"",
+									"pm.test('Status code is 200', () => {",
+									"    pm.response.to.have.status(200);",
+									"    pass += 1;",
+									"})",
+									"",
+									"pm.test('Correct collection returned', () => {",
+									"    pm.expect(collection.info.name).to.equal('Day 02: Collections and environments');",
+									"    pass += 1;",
+									"})",
+									"",
+									"let folder = collection.item.find(fol => {",
+									"    return fol.name === 'Collections and environments';",
+									"});",
+									"",
+									"pm.test('Old request updated', () => {",
+									"    let oldRequest = folder.item.find(req => {",
+									"        return req.name === 'POST raw text';",
+									"    });",
+									"    pm.expect(oldRequest.name).to.equal('POST raw text');",
+									"    pm.expect(oldRequest.request.method).to.equal('POST');",
+									"    pass += 1;",
+									"})",
+									"",
+									"pm.test(\"New request added\", () => {",
+									"    let newRequest = folder.item.find(req => { return req.name === \"GET with query params\"});",
+									"    if(newRequest){",
+									"        pm.expect(newRequest.name).to.equal(\"GET with query params\");",
+									"        pm.expect(newRequest.request.method).to.equal(\"GET\");",
+									"        pm.expect(newRequest.request.url.query.length).to.equal(2);",
+									"        pass += 1;",
+									"    } else {",
+									"        pm.expect.fail(\"New request not found\");",
+									"    }",
+									"});",
+									"",
+									"let template = '';",
+									"",
+									"pm.visualizer.set(template)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "09ac2edb-0ad0-4400-8ded-4b1459bfcd5a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{postman_api_key}}",
+								"type": "text"
+							}
+						],
+						"url": "https://api.getpostman.com/collections/{{collectionUid}}",
+						"description": "It's time to submit your solution.\n\n1. **Get the collection ID:** Select the collection in the sidebar. Then in the context bar to the right, select the `Info` icon and copy the collection `ID`. Make sure you're getting the `ID` for the collection, and not this request.\n2. **Update the request URL:** Update the `collectionUid` in the request URL with the collection `ID` from the previous step, using any method you prefer.\n3. **Get your Postman API key**: Get your [Postman API key](https://go.postman.co/settings/me/api-keys) and make a new environment variable called `postman_api_key`, so that Postman can authorize your request as shown under the **Headers** tab. Paste the API key under `CURRENT VALUE` (and not `INITIAL VALUE`).> ⚠ DON'T LEAK YOUR SECRETS!  \n    It's very important to add sensitive values like an API key to the `CURRENT VALUE` (and not `INITIAL VALUE`) of your public workspace since initial values can be viewed publicly in a public workspace. Storing sensitive values only in `CURRENT VALUE` keeps your secrets private in a team or public workspace. If you accidentally show your API key, [revoke and regenerate your API key](https://go.postman.co/settings/me/api-keys).An environment can be used with other collections. Keep it handy, so we can use it in upcoming challenges.\n4. **Validate your solution**: Save your changes in the collection and environment. Hit **Send** and look under the **Tests** tab of the server response at the bottom to review your test results.\n    \n\nIf you have any failures, [review the failed test results](https://youtu.be/S3GKLTVRtmE) or ask for support in the [community forum](https://community.postman.com/). When all of your tests pass, you are done with today's challenge. Remember to save your changes as you'll need to pass all the challenges to claim a **30 days of Postman** badge."
+					},
+					"response": []
+				}
+			],
+			"id": "404dc071-d0cc-4613-a7be-bfba13f57b3f",
+			"description": "Follow the instructions in the request documentation."
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "https://postman-echo.com"
+		},
+		{
+			"key": "collectionUid",
+			"value": "32569772-d9f67ee0-feb6-4e36-b8cf-353d0d215c2e"
+		}
+	]
+}
